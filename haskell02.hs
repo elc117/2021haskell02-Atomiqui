@@ -14,3 +14,15 @@ itemize str = map (\ x -> "<li>"++ x ++ "</ li>") str
 
 bigCircles :: Float -> [Float] -> [Float]
 bigCircles tam lst = filter (\x -> x^2 * pi > tam) lst
+
+quarentena :: [(String,Float)] -> [(String,Float)]
+quarentena temp = filter (\ (_, temp) -> febre temp) temp
+
+idadesEm :: [Int] -> Int -> [Int]
+idadesEm lst ref = map (\ x -> ref - x) lst
+
+changeNames :: [String] -> [String]
+changeNames nome = map (\ nome -> if(head(nome) == 'A') then "Super " ++ nome else nome) nome
+
+onlyShorts :: [String] -> [String]
+onlyShorts lst = filter (\ x -> length(x) < 5) lst
